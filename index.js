@@ -71,7 +71,7 @@ $(function() {
         var grid = $(this).data('gridstack');
 
         _.each(items, function(node) {
-            grid.addWidget($('<div><div class="grid-stack-item-content" data-name-id="' + node.name + '"><p>' + node.name + '</p><div class="iframe_frame"><iframe src="' + node.template + '"></iframe></div></div></div>'),
+            grid.addWidget($('<div><div class="grid-stack-item-content" data-name-id="' + node.name + '"><p>' + node.name + '</p><div class="iframe_frame"><iframe scrolling="no" src="' + node.template + '"></iframe></div></div></div>'),
                 node.x, node.y, node.width, node.height);
         }, this);
     });

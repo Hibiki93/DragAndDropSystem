@@ -11,8 +11,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Two grids demo</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.0/jquery-ui.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
@@ -26,26 +26,43 @@
 </head>
 
 <body>
-    <div class="container-fluid">
-        <h1>Two grids demo</h1>
-
+    <div class="container">
+        <h3>DAD System</h3>
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-2">
+                <div class="btn w-100" id="save_layout">
+                    Save Layout
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="btn w-100" id="load_layout">
+                    Load Layout
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="btn w-100" id="clear_layout">
+                    Clear Layout
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-7">
                 <div class="sidebar">
                     <div class="grid-stack-item">
                         <div class="grid-stack-item-content">Drag me</div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-9">
+            <div class="col-md-5">
                 <div class="trash">
                 </div>
             </div>
         </div>
 
-        <div class="row">
+        <div class="row pb-5">
             <div class="col-md-12">
                 <div class="grid-stack" id="grid1">
+
                 </div>
             </div>
         </div>

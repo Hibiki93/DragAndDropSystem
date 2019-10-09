@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Testing</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/default-skin/default-skin.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.csss">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="test.css">
+</head>
+
+<body>
+
+
+    <div class="container-fulid product_cat-2">
+        <div class="row">
+            <div class="col-6 col-md-3 p-0 cat_box">
+                <a href="#">
+                    <div class="p-3">
+                        <img class="w-100" src="https://cdn1.npcdn.net/userfiles/20920/image/img1.png" alt="">
+                        <p>蛋糕阿</p>
+                        <div class="line"></div>
+                        <p>CAKE</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-6 col-md-3 p-0 cat_box">
+                <a href="#">
+                    <div class="p-3">
+                        <img class="w-100" src="https://cdn1.npcdn.net/userfiles/20920/image/img2.png" alt="">
+                        <p>造 型 蛋 糕</p>
+                        <div class="line"></div>
+                        <p>CUSTOMIZED DESIGN</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-6 col-md-3 p-0 cat_box">
+                <a href="#">
+                    <div class="p-3">
+                        <img class="w-100" src="https://cdn1.npcdn.net/userfiles/20920/image/img3.png" alt="">
+                        <p>满 月 礼 盒</p>
+                        <div class="line"></div>
+                        <p>FULL MONTH</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-6 col-md-3 p-0 cat_box">
+                <a href="#">
+                    <div class="p-3">
+                        <img class="w-100" src="https://cdn1.npcdn.net/userfiles/20920/image/img4.png" alt="">
+                        <p>主 题 摆 设</p>
+                        <div class="line"></div>
+                        <p>THEME DESSERT BAR</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+
+<!--General Script-->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<!--General Script End-->
+
+<!-- Slick Script -->
+<link rel="stylesheet" href="lib/js/slick-1.8.1/slick/slick-theme.css">
+<link rel="stylesheet" href="lib/js/slick-1.8.1/slick/slick.css">
+<script src="lib/js/slick-1.8.1/slick/slick.min.js"></script>
+<!-- Slick Script End -->
+
+<script>
+    function showFloatMenu() {
+        $('.floating_btn .floating_menu .btn').toggleClass('show');
+    }
+    $('.floating_menu .btn').on('click', function() {
+        showFloatMenu();
+    });
+</script>
+
+
+<script>
+    $(window).scroll(function() {
+        let x = $(window).scrollTop();
+        let y = $(".product_cat-2").offset().top;
+        console.log($(window).scrollTop());
+        console.log($(".product_cat-2").offset().top);
+        if (x + 200 > y) {
+            $(".cat_box img").addClass('effect');
+        } else {
+            $(".cat_box img").removeClass('effect');
+        }
+    });
+</script>
+<script>
+    $(window).scroll(function() {
+        let x = $(window).scrollTop();
+        let y = $(".news_row").offset().top;
+        $(".news_row").each(function(i) {
+            let z = $(".news_row");
+            let a = z[i];
+            let b = a.offsetTop;
+            if (x + 300 > b) {
+                a.classList.add('effect');
+            }
+            // else {
+            //     a.classList.remove('effect');
+            // }
+        })
+    });
+</script>
+<script>
+    //-- Plugin implementation
+    (function($) {
+        $.fn.countTo = function(options) {
+            return this.each(function() {
+                //-- Arrange
+                var FRAME_RATE = 60; // Predefine default frame rate to be 60fps
+                var $el = $(this);
+                var countFrom = parseInt($el.attr('data-count-from'));
+                var countTo = parseInt($el.attr('data-count-to'));
+                var countSpeed = $el.attr('data-count-speed'); // Number increment per second
+
+                //-- Action
+                var rafId;
+                var increment;
+                var currentCount = countFrom;
+                var countAction = function() { // Self looping local function via requestAnimationFrame
+                    if (currentCount < countTo) { // Perform number incremeant
+                        $el.text(Math.floor(currentCount)); // Update HTML display
+                        increment = countSpeed / FRAME_RATE; // Calculate increment step
+                        currentCount += increment; // Increment counter
+                        rafId = requestAnimationFrame(countAction);
+                    } else { // Terminate animation once it reaches the target count number
+                        $el.text(countTo); // Set to the final value before everything stops
+                        //cancelAnimationFrame(rafId);
+                    }
+                };
+                rafId = requestAnimationFrame(countAction); // Initiates the looping function
+            });
+        };
+    }(jQuery));
+
+    var counted = false;
+    $(window).scroll(function() {
+        let x = $(window).scrollTop();
+        let y = $(".counting_area").offset().top;
+        if (!counted == true) {
+            if (x + 200 > y) {
+                $('.count_number').countTo();
+                counted = true
+            }
+        }
+    });
+</script>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Two grids demo</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.0/jquery-ui.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.5.0/lodash.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gridstack.js/0.4.0/gridstack.min.css" />
+    <link rel="stylesheet" href="https://cdn.bootcss.com/gridstack.js/0.4.0/gridstack-extra.css">
+    <script type="text/javascript" src='gridstack.min.js'></script>
+    <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/gridstack.js/0.4.0/gridstack.jQueryUI.min.js'></script>
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <h1>Two grids demo</h1>
+
+        <div class="row">
+            <div class="col-md-3">
+                <div class="sidebar">
+                    <div class="grid-stack-item">
+                        <div class="grid-stack-item-content">Drag me</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="trash">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="grid-stack" id="grid1">
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="row">
+            I am Grid 2
+            <div class="col-md-12">
+                <div class="grid-stack" id="grid2">
+                </div>
+            </div>
+        </div> -->
+    </div>
+
+</body>
+
+<script src="index.js"></script>
+
+</html>
